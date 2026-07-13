@@ -1,3 +1,57 @@
-nav {
-  padding: 1rem;
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:28px;
+
+font-weight:700;
+
+}
+
+.logo span{
+
+font-family:"Outfit",sans-serif;
+
+letter-spacing:1px;
+
+}
+
+.nav-icons{
+
+display:flex;
+
+gap:18px;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+.nav-icons svg{
+
+transition:.3s;
+
+}
+
+.nav-icons svg:hover{
+
+transform:scale(1.15);
+
 }

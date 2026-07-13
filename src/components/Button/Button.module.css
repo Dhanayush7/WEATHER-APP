@@ -1,0 +1,37 @@
+.button{
+
+margin-top:30px;
+
+padding:16px 30px;
+
+border-radius:60px;
+
+background:linear-gradient(
+90deg,
+#4F8CFF,
+#6EE7F9
+);
+
+font-size:17px;
+
+font-weight:600;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+transition:.35s;
+
+color:white;
+
+}
+
+.button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 40px rgba(79,140,255,.35);
+
+}

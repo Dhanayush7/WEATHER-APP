@@ -1,3 +1,48 @@
-.hourly-forecast {
-  padding: 1rem;
+.container {
+  margin-top: 40px;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 120px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,.15);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 70px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #dbeafe;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 26px;
 }

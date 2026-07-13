@@ -1,0 +1,18 @@
+.logo h1 {
+  font-size: 68px;
+  font-family: "Outfit";
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #4F8CFF,
+    #6EE7F9,
+    #FDBA74
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

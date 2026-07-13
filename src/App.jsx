@@ -12,15 +12,19 @@ function App() {
 });
   
 
+  const hasWeatherData = Boolean(weatherData?.current || weatherData?.forecast);
+
   return (
     <>
       <AuroraBackground />
 
       <main className="app">
-        {weatherData ? (
+        {hasWeatherData ? (
           <WeatherDashboard data={weatherData} />
         ) : (
-          <Landing setWeatherData={setWeatherData} />
+          <div style={{ color: "white", padding: "2rem", textAlign: "center" }}>
+            <Landing setWeatherData={setWeatherData} />
+          </div>
         )}
       </main>
     </>

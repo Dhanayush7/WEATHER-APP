@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(18px);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.15);
+  transition: .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.card svg {
+  font-size: 55px;
+  color: #6EE7F9;
+}
+
+.card h3 {
+  margin-top: 10px;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: 600;
+}

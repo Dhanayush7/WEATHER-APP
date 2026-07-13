@@ -1,25 +1,46 @@
-import React from 'react';
-import './Stats.css';
+import styles from "./Stats.module.css";
+import {
+  WiHumidity,
+  WiStrongWind,
+  WiBarometer,
+  WiDaySunny,
+} from "react-icons/wi";
 
-const stats = [
-  { label: 'Humidity', value: '62%' },
-  { label: 'Wind', value: '12 km/h' },
-  { label: 'Pressure', value: '1012 hPa' },
-];
+function Stats({ weather }) {
+  const stats = [
+    {
+      icon: <WiHumidity />,
+      label: "Humidity",
+      value: `${weather.main.humidity}%`,
+    },
+    {
+      icon: <WiStrongWind />,
+      label: "Wind",
+      value: `${weather.wind.speed} km/h`,
+    },
+    {
+      icon: <WiBarometer />,
+      label: "Pressure",
+      value: `${weather.main.pressure} hPa`,
+    },
+    {
+      icon: <WiDaySunny />,
+      label: "Visibility",
+      value: `${weather.visibility / 1000} km`,
+    },
+  ];
 
-const Stats = () => {
   return (
-    <section className="stats">
-      <div className="stats__grid">
-        {stats.map((item) => (
-          <div key={item.label} className="stats__card">
-            <span className="stats__label">{item.label}</span>
-            <strong className="stats__value">{item.value}</strong>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className={styles.grid}>
+      {stats.map((item, index) => (
+        <div className={styles.card} key={index}>
+          {item.icon}
+          <h3>{item.label}</h3>
+          <p>{item.value}</p>
+        </div>
+      ))}
+    </div>
   );
-};
+}
 
 export default Stats;

@@ -5,8 +5,8 @@ import {
 import styles from "./Landing.module.css";
 import Logo from "../Logo/Logo";
 import SearchBar from "../SearchBar/SearchBar";
-import { getWeather } from "../../services/weatherService";
-   function Landing({ setWeatherData }) {               
+
+function Landing({ setWeatherData }) {
 
   const handleSearch = async (city) => {
 

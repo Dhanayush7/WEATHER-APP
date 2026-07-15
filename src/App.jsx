@@ -1,18 +1,20 @@
-import "./App.css";
+﻿import "./App.css";
+import { useState } from "react";
+
 import WeatherDashboard from "./components/WeatherDashboard/WeatherDashboard";
 import AuroraBackground from "./components/AuroraBackground/AuroraBackground";
 import Landing from "./components/Landing/Landing";
-import { useState } from "react";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
+
 function App() {
   const [weatherData, setWeatherData] = useState({
-  current: null,
-  forecast: null,
-  loading: false,
-  error: null,
-});
-  
+    current: null,
+    forecast: null,
+    loading: false,
+    error: null,
+  });
 
-  const hasWeatherData = Boolean(weatherData?.current || weatherData?.forecast);
+  const hasWeatherData = Boolean(weatherData.current);
 
   return (
     <>
@@ -20,11 +22,25 @@ function App() {
 
       <main className="app">
         {hasWeatherData ? (
-          <WeatherDashboard data={weatherData} />
+          <ErrorBoundary>
+            <WeatherDashboard data={weatherData} />
+          </ErrorBoundary>
         ) : (
-          <div style={{ color: "white", padding: "2rem", textAlign: "center" }}>
+          <>
             <Landing setWeatherData={setWeatherData} />
-          </div>
+
+            {weatherData.error && (
+              <p
+                style={{
+                  color: "#ffb4b4",
+                  textAlign: "center",
+                  marginTop: "20px",
+                }}
+              >
+                {weatherData.error}
+              </p>
+            )}
+          </>
         )}
       </main>
     </>

@@ -1,4 +1,6 @@
 import styles from "./Stats.module.css";
+import { motion } from "framer-motion";
+
 import {
   WiHumidity,
   WiStrongWind,
@@ -7,6 +9,8 @@ import {
 } from "react-icons/wi";
 
 function Stats({ weather }) {
+  if (!weather || !weather.main) return null;
+
   const stats = [
     {
       icon: <WiHumidity />,
@@ -33,11 +37,28 @@ function Stats({ weather }) {
   return (
     <div className={styles.grid}>
       {stats.map((item, index) => (
-        <div className={styles.card} key={index}>
-          {item.icon}
+        <motion.div
+          className={styles.card}
+          key={index}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: index * 0.15,
+            duration: 0.5,
+          }}
+          whileHover={{
+            y: -10,
+            scale: 1.04,
+          }}
+        >
+          <div className={styles.icon}>
+            {item.icon}
+          </div>
+
           <h3>{item.label}</h3>
+
           <p>{item.value}</p>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

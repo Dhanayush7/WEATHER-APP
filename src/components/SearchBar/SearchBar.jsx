@@ -7,12 +7,18 @@ function SearchBar({ onSearch }) {
 
   const handleSearch = () => {
     if (city.trim() === "") return;
-    onSearch(city);
+    console.log("SearchBar: triggering search for:", city);
+    try {
+      onSearch(city);
+    } catch (err) {
+      console.error("SearchBar onSearch error:", err);
+    }
     setCity("");
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
+      console.log("SearchBar: Enter pressed, city=", city);
       handleSearch();
     }
   };

@@ -1,6 +1,8 @@
 import styles from "./HourlyForecast.module.css";
 
 function HourlyForecast({ forecast }) {
+  if (!forecast || !forecast.list) return null;
+
   return (
     <div className={styles.container}>
       <h2>24-Hour Forecast</h2>

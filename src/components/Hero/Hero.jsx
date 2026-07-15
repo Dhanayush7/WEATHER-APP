@@ -1,6 +1,11 @@
 import styles from "./Hero.module.css";
 
+import Greeting from "../Greeting/Greeting";
+import DateTime from "../DateTime/DateTime";
+
 function Hero({ weather }) {
+  if (!weather || !weather.weather || !weather.main) return null;
+
   return (
     <div className={styles.hero}>
       <img
@@ -8,15 +13,23 @@ function Hero({ weather }) {
         alt={weather.weather[0].description}
       />
 
-      <h1>{weather.name}</h1>
+      <h1>
+        {weather.name}, {weather.sys.country}
+      </h1>
 
-      <h2>{Math.round(weather.main.temp)}°</h2>
+      <h2>{Math.round(weather.main.temp)}°C</h2>
 
-      <p>{weather.weather[0].description}</p>
+      <p className={styles.description}>
+        {weather.weather[0].description}
+      </p>
 
-      <span>
-        Feels Like {Math.round(weather.main.feels_like)}°
+      <span className={styles.feels}>
+        Feels Like {Math.round(weather.main.feels_like)}°C
       </span>
+
+      <DateTime />
+
+      <Greeting />
     </div>
   );
 }

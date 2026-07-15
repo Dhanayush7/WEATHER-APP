@@ -1,0 +1,17 @@
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.greeting span {
+  font-size: 24px;
+}
+
+.greeting p {
+  font-size: 18px;
+  color: #dbeafe;
+  font-weight: 500;
+}

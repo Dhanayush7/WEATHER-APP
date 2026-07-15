@@ -4,4 +4,76 @@
   display: flex;
   flex-direction: column;
   gap: 35px;
+
+  transition: 1s;
+  min-height: 100vh;
+  padding: 40px;
+  border-radius: 35px;
 }
+.clear{
+
+background:linear-gradient(
+135deg,
+#FDB813,
+#FF8C42);
+
+}
+
+.clouds{
+
+background:linear-gradient(
+135deg,
+#4B79A1,
+#A7C7E7);
+
+}
+
+.rain{
+
+background:linear-gradient(
+135deg,
+#1e3c72,
+#2a5298);
+
+}
+
+.snow{
+
+background:linear-gradient(
+135deg,
+#d7e1ec,
+#ffffff);
+
+color:black;
+
+}
+
+.storm{
+
+background:linear-gradient(
+135deg,
+#232526,
+#414345);
+
+}
+
+.mist{
+
+background:linear-gradient(
+135deg,
+#757F9A,
+#D7DDE8);
+
+color:black;
+
+}
+
+.default{
+
+background:linear-gradient(
+135deg,
+#3B82F6,
+#0EA5E9);
+
+}
+

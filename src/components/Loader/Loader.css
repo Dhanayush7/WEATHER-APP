@@ -1,33 +1,41 @@
-.loaderContainer {
-  min-height: 60vh;
+.loader-container {
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
+
   color: white;
 }
 
-.spinner {
-  width: 70px;
-  height: 70px;
-  border: 6px solid rgba(255,255,255,0.2);
-  border-top: 6px solid #6EE7F9;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 25px;
+.weather-loader {
+  font-size: 70px;
+
+  animation: float 2s ease-in-out infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.loader-container h2 {
+  margin-top: 20px;
+
+  font-size: 32px;
 }
 
-.loaderContainer h2 {
-  margin-bottom: 10px;
-  font-size: 28px;
+.loader-container p {
+  margin-top: 10px;
+
+  opacity: .7;
 }
 
-.loaderContainer p {
-  color: #dbeafe;
+@keyframes float {
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
 }

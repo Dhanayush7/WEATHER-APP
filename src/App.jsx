@@ -1,6 +1,6 @@
 ﻿import "./App.css";
 import { useState } from "react";
-
+import Loader from "./components/Loader/Loader";
 import WeatherDashboard from "./components/WeatherDashboard/WeatherDashboard";
 import AuroraBackground from "./components/AuroraBackground/AuroraBackground";
 import Landing from "./components/Landing/Landing";
@@ -15,6 +15,10 @@ function App() {
   });
 
   const hasWeatherData = Boolean(weatherData.current);
+
+  if (weatherData.loading) {
+    return <Loader />;
+  }
 
   return (
     <>

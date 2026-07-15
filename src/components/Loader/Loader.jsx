@@ -1,11 +1,15 @@
-import styles from "./Loader.module.css";
+import "./Loader.css";
 
 function Loader() {
   return (
-    <div className={styles.loaderContainer}>
-      <div className={styles.spinner}></div>
+    <div className="loader-container">
+      <div className="weather-loader">
+        🌤️
+      </div>
+
       <h2>Fetching Weather...</h2>
-      <p>Please wait a moment.</p>
+
+      <p>Please wait a moment</p>
     </div>
   );
 }

@@ -1,15 +1,15 @@
 .dashboard {
-  width: min(1200px, 90%);
-  margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+  position: relative;
+  overflow: hidden;
 
-  transition: 1s;
   min-height: 100vh;
   padding: 40px;
+
   border-radius: 35px;
+
+  isolation: isolate;
 }
+
 .clear{
 
 background:linear-gradient(

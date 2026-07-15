@@ -1,4 +1,81 @@
-.hourlyForecast {
-  padding: 1rem;
-  color: white;
+.container{
+
+margin-top:45px;
+
+}
+
+.container h2{
+
+margin-bottom:25px;
+
+font-size:28px;
+
+}
+
+.scrollContainer{
+
+display:flex;
+
+gap:22px;
+
+overflow-x:auto;
+
+padding-bottom:10px;
+
+scrollbar-width:none;
+
+}
+
+.scrollContainer::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.card{
+
+min-width:160px;
+
+padding:24px;
+
+text-align:center;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.time{
+
+font-size:15px;
+
+color:#cbd5e1;
+
+margin-bottom:10px;
+
+}
+
+.card h3{
+
+font-size:38px;
+
+margin:10px 0;
+
+}
+
+.card span{
+
+color:#94a3b8;
+
+font-size:15px;
+
 }

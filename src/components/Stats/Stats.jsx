@@ -1,6 +1,4 @@
-import styles from "./Stats.module.css";
 import { motion } from "framer-motion";
-
 import {
   WiHumidity,
   WiStrongWind,
@@ -8,59 +6,53 @@ import {
   WiDaySunny,
 } from "react-icons/wi";
 
-function Stats({ weather }) {
-  if (!weather || !weather.main) return null;
+import styles from "./Stats.module.css";
 
-  const stats = [
+function Stats({ weather }) {
+  if (!weather) return null;
+
+  const cards = [
     {
-      icon: <WiHumidity />,
-      label: "Humidity",
+      title: "Humidity",
       value: `${weather.main.humidity}%`,
+      icon: <WiHumidity />,
     },
     {
-      icon: <WiStrongWind />,
-      label: "Wind",
+      title: "Wind",
       value: `${weather.wind.speed} km/h`,
+      icon: <WiStrongWind />,
     },
     {
-      icon: <WiBarometer />,
-      label: "Pressure",
+      title: "Pressure",
       value: `${weather.main.pressure} hPa`,
+      icon: <WiBarometer />,
     },
     {
+      title: "Feels Like",
+      value: `${Math.round(weather.main.feels_like)}°`,
       icon: <WiDaySunny />,
-      label: "Visibility",
-      value: `${weather.visibility / 1000} km`,
     },
   ];
 
   return (
-    <div className={styles.grid}>
-      {stats.map((item, index) => (
+    <section className={styles.grid}>
+      {cards.map((card, index) => (
         <motion.div
-          className={styles.card}
           key={index}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: index * 0.15,
-            duration: 0.5,
-          }}
+          className={styles.card}
           whileHover={{
             y: -10,
-            scale: 1.04,
+            scale: 1.05,
           }}
         >
-          <div className={styles.icon}>
-            {item.icon}
-          </div>
+          <div className={styles.icon}>{card.icon}</div>
 
-          <h3>{item.label}</h3>
+          <h3>{card.title}</h3>
 
-          <p>{item.value}</p>
+          <p>{card.value}</p>
         </motion.div>
       ))}
-    </div>
+    </section>
   );
 }
 

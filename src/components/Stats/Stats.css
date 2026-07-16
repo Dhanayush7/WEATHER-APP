@@ -28,3 +28,22 @@
 .stats__value {
   font-size: 1.1rem;
 }
+
+
+.card{
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.25);
+
+}
+
+.card:hover{
+
+box-shadow:
+0 20px 45px rgba(79,140,255,.35);
+
+}

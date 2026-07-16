@@ -1,29 +1,55 @@
 import styles from "./WeatherDashboard.module.css";
-import WeatherEffects from "../WeatherEffects/WeatherEffects";
+import WeatherChart from "../WeatherChart/WeatherChart";
 import Hero from "../Hero/Hero";
 import Stats from "../Stats/Stats";
 import SunriseSunset from "../SunriseSunset/SunriseSunset";
 import HourlyForecast from "../HourlyForecast/HourlyForecast";
+import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
+import AirQuality from "../AirQuality/AirQuality";
+import FavoriteCities from "../FavoriteCities/FavoriteCities";
+import RecentSearches from "../RecentSearches/RecentSearches";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import WeatherAlerts from "../WeatherAlerts/WeatherAlerts";
 
-function WeatherDashboard({ data }) {
-  const themeKey =
-    data && data.current && data.current.weather && data.current.weather[0]
-      ? String(data.current.weather[0].main).toLowerCase()
-      : "default";
+
+function WeatherDashboard({
+  data,
+  onSearchCity,
+  recentSearches,
+}) {
+  if (!data || !data.current) return null;
+
+  const themeKey = data.current.weather?.[0]?.main?.toLowerCase() || "default";
 
   return (
     <div className={`${styles.dashboard} ${styles[themeKey]}`}>
-      {/* <WeatherEffects weather={data.current} /> */}
+      <ThemeToggle />
+
       <Hero weather={data.current} />
 
-      
-<Stats weather={data.current} />
+      <Stats weather={data.current} />
 
-<SunriseSunset weather={data.current} />
+      <SunriseSunset weather={data.current} />
 
-<HourlyForecast forecast={data.forecast} />
+      <AirQuality weather={data.current} />
 
-      
+      <WeatherAlerts alerts={data.current.alerts} />
+
+      <HourlyForecast forecast={data.forecast} />
+
+      <WeatherChart forecast={data.forecast} />
+
+      <WeeklyForecast forecast={data.forecast} />
+
+      <FavoriteCities
+        currentCity={data.current.name}
+        onSelectCity={onSearchCity}
+      />
+
+      <RecentSearches
+        searches={recentSearches}
+        onSelect={onSearchCity}
+      />
     </div>
   );
 }

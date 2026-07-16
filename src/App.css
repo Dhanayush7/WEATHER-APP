@@ -13,3 +13,23 @@ position:relative;
 z-index:2;
 
 }
+
+body{
+transition:
+background .5s,
+color .5s;
+}
+
+body.light-theme{
+
+background:#eef5ff;
+color:#111827;
+
+}
+
+body.dark-theme{
+
+background:#08111f;
+color:white;
+
+}

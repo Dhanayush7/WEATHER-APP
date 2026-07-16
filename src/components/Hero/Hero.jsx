@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaLocationDot } from "react-icons/fa6";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import styles from "./Hero.module.css";
 
@@ -13,6 +14,7 @@ function Hero({ weather }) {
       transition={{ duration: 0.7 }}
     >
       <motion.div
+        className={styles.iconContainer}
         animate={{
           rotate: [0, 8, -8, 0],
           scale: [1, 1.08, 1],
@@ -24,7 +26,7 @@ function Hero({ weather }) {
       >
         <WeatherIcon
           condition={weather.weather[0].main}
-          size={160}
+          size={170}
         />
       </motion.div>
 
@@ -32,15 +34,37 @@ function Hero({ weather }) {
         {Math.round(weather.main.temp)}°
       </h1>
 
-      <h2>{weather.name}</h2>
+      <div className={styles.location}>
+        <FaLocationDot />
+        <span>
+          {weather.name}, {weather.sys.country}
+        </span>
+      </div>
 
-      <p className={styles.condition}>
+      <h2 className={styles.condition}>
+        {weather.weather[0].main}
+      </h2>
+
+      <p className={styles.description}>
         {weather.weather[0].description}
       </p>
 
-      <p className={styles.feels}>
-        Feels like {Math.round(weather.main.feels_like)}°
-      </p>
+      <div className={styles.extraInfo}>
+        <div>
+          <span>H</span>
+          <strong>{Math.round(weather.main.temp_max)}°</strong>
+        </div>
+
+        <div>
+          <span>L</span>
+          <strong>{Math.round(weather.main.temp_min)}°</strong>
+        </div>
+
+        <div>
+          <span>Feels</span>
+          <strong>{Math.round(weather.main.feels_like)}°</strong>
+        </div>
+      </div>
     </motion.section>
   );
 }

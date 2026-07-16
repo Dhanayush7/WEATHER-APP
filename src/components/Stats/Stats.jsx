@@ -41,11 +41,19 @@ function Stats({ weather }) {
           key={index}
           className={styles.card}
           whileHover={{
-            y: -10,
             scale: 1.05,
+            y: -8,
+          }}
+          whileTap={{
+            scale: 0.97,
+          }}
+          transition={{
+            duration: 0.25,
           }}
         >
-          <div className={styles.icon}>{card.icon}</div>
+          <div className={styles.icon}>
+            {card.icon}
+          </div>
 
           <h3>{card.title}</h3>
 

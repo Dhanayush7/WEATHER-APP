@@ -1,5 +1,8 @@
 import "./Navbar.css";
 import { FiMoon, FiSearch } from "react-icons/fi";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+
+
 
 const Navbar = () => {
   return (

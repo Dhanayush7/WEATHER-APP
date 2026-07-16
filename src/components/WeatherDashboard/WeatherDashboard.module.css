@@ -8,7 +8,28 @@
   border-radius: 35px;
 
   isolation: isolate;
+  width: min(1300px, 95%);
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  @media (max-width: 992px) {
+  .dashboard {
+    width: 94%;
+    gap: 22px;
+  }
 }
+
+@media (max-width: 768px) {
+  .dashboard {
+    width: 96%;
+    margin: 20px auto;
+    gap: 18px;
+  }
+}
+}
+
 
 .clear{
 

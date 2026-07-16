@@ -6,7 +6,7 @@ import WeatherDashboard from "./components/WeatherDashboard/WeatherDashboard";
 import AuroraBackground from "./components/AuroraBackground/AuroraBackground";
 import Landing from "./components/Landing/Landing";
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-
+import Skeleton from "./components/Skeleton/Skeleton";
 import {
   getCurrentWeather,
   getHourlyForecast,
@@ -71,8 +71,16 @@ function App() {
   const hasWeatherData = Boolean(weatherData.current);
 
   if (weatherData.loading) {
-    return <Loader />;
-  }
+  return (
+    <>
+      <AuroraBackground weather={weatherData.current} />
+
+      <main className="app">
+        <Skeleton />
+      </main>
+    </>
+  );
+}
 
   return (
     <>

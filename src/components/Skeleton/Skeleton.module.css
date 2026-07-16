@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  animation: pulse 1.5s infinite;
+}
+
+.hero {
+  height: 320px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.08);
+}
+
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  height: 150px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
+}
+
+.forecast {
+  margin-top: 30px;
+  height: 220px;
+  border-radius: 24px;
+  background: rgba(255,255,255,.08);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .45;
+  }
+
+  50% {
+    opacity: .9;
+  }
+
+  100% {
+    opacity: .45;
+  }
+}

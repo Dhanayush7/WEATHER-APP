@@ -1,69 +1,142 @@
-.hero{
+.hero {
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
-padding:50px;
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(22px);
 
-display:flex;
+  border: 1px solid rgba(255,255,255,.15);
 
-flex-direction:column;
+  border-radius: 32px;
 
-align-items:center;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.35),
+    0 0 30px rgba(79,140,255,.18);
 
-text-align:center;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.15);
-
-border-radius:30px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.35);
-
-transition:.4s;
-
+  transition: all .35s ease;
 }
 
-.hero:hover{
-
-transform:translateY(-6px);
-
+.hero:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.40),
+    0 0 45px rgba(79,140,255,.30);
 }
 
-.temp{
-
-font-size:7rem;
-
-font-weight:700;
-
-margin:0;
-
-line-height:1;
-
+.iconContainer {
+  margin-bottom: 15px;
 }
 
-.hero h2{
-
-margin-top:10px;
-
-font-size:2rem;
-
+.temp {
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 10px 0;
+  color: white;
 }
 
-.condition{
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-text-transform:capitalize;
+  color: #bfdbfe;
 
-color:#cbd5e1;
+  font-size: 1.1rem;
 
-font-size:1.1rem;
-
+  margin-top: 10px;
 }
 
-.feels{
+.condition {
+  margin-top: 12px;
 
-margin-top:8px;
+  font-size: 2rem;
 
-color:#94a3b8;
+  font-weight: 700;
 
+  color: white;
+
+  text-transform: capitalize;
 }
+
+.description {
+  margin-top: 6px;
+
+  color: #cbd5e1;
+
+  font-size: 1.05rem;
+
+  text-transform: capitalize;
+}
+
+.extraInfo {
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.extraInfo div {
+  min-width: 90px;
+
+  padding: 15px 20px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  transition: .3s;
+}
+
+.extraInfo div:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255,255,255,.14);
+}
+
+.extraInfo span {
+  display: block;
+
+  font-size: .9rem;
+
+  color: #93c5fd;
+
+  margin-bottom: 6px;
+}
+
+.extraInfo strong {
+  color: white;
+
+  font-size: 1.25rem;
+}
+
+
+    @media (max-width: 768px) {
+  .temp {
+    font-size: 4.5rem;
+  }
+
+  .hero {
+    padding: 30px 18px;
+  }
+
+  .extraInfo {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .extraInfo div {
+    width: 100%;
+  }
+}
+  

@@ -10,7 +10,7 @@ import FavoriteCities from "../FavoriteCities/FavoriteCities";
 import RecentSearches from "../RecentSearches/RecentSearches";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import WeatherAlerts from "../WeatherAlerts/WeatherAlerts";
-
+import WeatherHighlights from "../WeatherHighlights/WeatherHighlights";
 
 function WeatherDashboard({
   data,
@@ -26,6 +26,8 @@ function WeatherDashboard({
       <ThemeToggle />
 
       <Hero weather={data.current} />
+
+      <WeatherHighlights weather={data.current} />
 
       <Stats weather={data.current} />
 

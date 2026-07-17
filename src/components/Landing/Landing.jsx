@@ -25,8 +25,9 @@ function Landing({ onSearch }) {
 
       <p>What city would you like to explore today?</p>
 
-      <SearchBar onSearch={handleSearch} />
-
+      <div style={{ marginTop: "28px", width: "100%", maxWidth: "700px" }}>
+  <SearchBar onSearch={handleSearch} />
+</div>
       {error && (
         <p className={styles.error}>
           {error}

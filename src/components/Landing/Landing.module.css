@@ -4,21 +4,51 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  padding: 20px;
 }
 
 .landing h1 {
-  font-size: 60px;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: white;
+}
+
+.landing h2 {
+  margin-top: 15px;
   color: white;
 }
 
 .landing p {
-  color: #ccc;
+  color: #d1d5db;
+  margin-top: 8px;
 }
 
 .error {
   margin-top: 1rem;
   color: #ffdddd;
   background: rgba(255, 0, 0, 0.12);
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 8px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+  .landing{
+    justify-content: center;
+    padding: 25px;
+  }
+
+  .landing h1{
+    font-size: 2.8rem;
+  }
+
+  .landing h2{
+    font-size: 1.6rem;
+  }
+
+  .landing p{
+    font-size: .95rem;
+  }
+
 }
